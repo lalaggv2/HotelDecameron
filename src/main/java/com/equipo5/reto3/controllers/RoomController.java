@@ -36,7 +36,7 @@ public class RoomController {
         return roomService.save(room);
     }
 
-    @PostMapping("/save")
+    @PostMapping("/all")
     @ResponseStatus(HttpStatus.CREATED)
     public Room save1 (@RequestBody Room room) {
         return roomService.save(room);

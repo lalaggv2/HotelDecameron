@@ -37,6 +37,12 @@ public class CategoryController {
         return categoryService.save(category);
     }
 
+    @PostMapping("/all")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Category save1 (@RequestBody Category category) {
+        return categoryService.save(category);
+    }
+
 //    //el put  la ruta es /api/Category/update
 //    @PutMapping("/update")
 //    @ResponseStatus(HttpStatus.CREATED)
