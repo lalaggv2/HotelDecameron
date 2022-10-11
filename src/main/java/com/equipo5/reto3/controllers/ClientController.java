@@ -3,6 +3,7 @@ package com.equipo5.reto3.controllers;
 import com.equipo5.reto3.entities.Client;
 import com.equipo5.reto3.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -36,11 +37,14 @@ public class ClientController {
     }
 
     @PostMapping("/all")
+    @ResponseStatus(HttpStatus.CREATED)
     public Client save1 (@RequestBody Client client) {
         return clientService.save(client);
     }
+
     //el put  la ruta es /api/Client/update
     @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
     public Client update (@RequestBody Client client) {
         return clientService.update(client);
     }
