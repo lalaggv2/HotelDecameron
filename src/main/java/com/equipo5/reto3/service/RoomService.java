@@ -51,9 +51,9 @@ public class RoomService {
                 if(room.getDescription()!=null) {
                     roomFound.get().setDescription(room.getDescription());
                 }
-//                if (room.getCategory() != null) {
-//                    roomFound.get().setCategory(room.getCategory());
-//                }
+                if (room.getCategory() != null) {
+                    roomFound.get().setCategory(room.getCategory());
+                }
                 return roomRepository.save(roomFound.get());
             }
         }

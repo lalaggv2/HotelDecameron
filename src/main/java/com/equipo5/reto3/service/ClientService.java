@@ -55,7 +55,7 @@ public class ClientService {
         }
         return client;
     }
-@ResponseStatus(HttpStatus.NO_CONTENT)
+
     public boolean delete(int id) {
         Boolean response = getClient(id).map(element -> {
             clientRepository.delete(element);
