@@ -35,6 +35,10 @@ public class ClientController {
         return clientService.save(client);
     }
 
+    @PostMapping("/save")
+    public Client save1 (@RequestBody Client client) {
+        return clientService.save(client);
+    }
     //el put  la ruta es /api/Client/update
     @PutMapping("/update")
     public Client update (@RequestBody Client client) {

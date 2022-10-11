@@ -35,6 +35,12 @@ public class RoomController {
     public Room save (@RequestBody Room room) {
         return roomService.save(room);
     }
+
+    @PostMapping("/save")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Room save1 (@RequestBody Room room) {
+        return roomService.save(room);
+    }
     
     //el put  la ruta es /api/Room/update
     @PutMapping("/update")

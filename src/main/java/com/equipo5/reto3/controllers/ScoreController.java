@@ -35,7 +35,12 @@ public class ScoreController {
     public Score save (@RequestBody Score score) {
         return scoreService.save(score);
     }
-    
+
+    @PostMapping("/save")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Score save1 (@RequestBody Score score) {
+        return scoreService.save(score);
+    }
     //el put  la ruta es /api/Score/update
     @PutMapping("/update")
     public Score update (@RequestBody Score score) {

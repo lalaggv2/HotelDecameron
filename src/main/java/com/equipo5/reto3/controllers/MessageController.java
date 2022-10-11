@@ -35,6 +35,12 @@ public class MessageController {
     public Message save (@RequestBody Message message) {
         return messageService.save(message);
     }
+
+    @PostMapping("/all")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Message save1 (@RequestBody Message message) {
+        return messageService.save(message);
+    }
     
     //el put  la ruta es /api/Message/update
     @PutMapping("/update")

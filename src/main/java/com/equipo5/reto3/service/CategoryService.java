@@ -23,7 +23,11 @@ public class CategoryService {
 
     public Category save (Category category) {
         if(category.getId()== null) {
-            return categoryRepository.save(category);
+            if(category.getName().length()<=45 && category.getDescription().length()<=250) {
+                return categoryRepository.save(category);
+            } else {
+                return  category;
+            }
         } else {
             Optional<Category> categoryFound = categoryRepository.getCategory(category.getId());
             if(categoryFound.isEmpty()){

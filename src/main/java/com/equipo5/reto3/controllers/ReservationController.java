@@ -35,7 +35,13 @@ public class ReservationController {
     public Reservation save (@RequestBody Reservation reservation) {
         return reservationService.save(reservation);
     }
-    
+
+    @PostMapping("/save")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Reservation save1 (@RequestBody Reservation reservation) {
+        return reservationService.save(reservation);
+    }
+
     //el put  la ruta es /api/Reservation/update
     @PutMapping("/update")
     public Reservation update (@RequestBody Reservation reservation) {
