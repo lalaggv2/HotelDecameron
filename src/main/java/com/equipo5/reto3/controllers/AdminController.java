@@ -48,12 +48,12 @@ public class AdminController {
     public Admin update (@RequestBody Admin admin) {
         return adminService.update(admin);
     }
-/*
+
     //para el delete la ruta es /api/Admin/delete
     @DeleteMapping("/{id}")
-    public Admin delete (@PathVariable ("id") int id) {
+    public boolean delete (@PathVariable ("id") int id) {
         return adminService.deleteAdmin(id);
-    } */
+    }
 
 
 }

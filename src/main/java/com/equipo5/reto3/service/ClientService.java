@@ -42,7 +42,7 @@ public class ClientService {
             Optional<Client> clientFound = getClient(client.getIdClient());
             if (!clientFound.isEmpty()) {
                 if (client.getName() != null){
-                clientFound.get().setName(client.getName());
+                    clientFound.get().setName(client.getName());
                 }
                 if (client.getAge() != null) {
                 clientFound.get().setAge(client.getAge());

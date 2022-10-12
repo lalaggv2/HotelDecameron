@@ -23,29 +23,35 @@ public class RoomController {
         return roomService.getAll();
     }
 
-// para traerlos por id
+    // para traerlos por id
     @GetMapping("/{id}")
-    public Optional<Room> getRoom(@PathVariable("id") int id){
+    public Optional<Room> getRoom(@PathVariable("id") int id) {
         return roomService.getRoom(id);
     }
 
     //el post la ruta es /api/Room/save
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Room save (@RequestBody Room room) {
+    public Room save(@RequestBody Room room) {
         return roomService.save(room);
     }
 
     @PostMapping("/all")
     @ResponseStatus(HttpStatus.CREATED)
-    public Room save1 (@RequestBody Room room) {
+    public Room save1(@RequestBody Room room) {
         return roomService.save(room);
     }
-    
+
     //el put  la ruta es /api/Room/update
     @PutMapping("/update")
-    public Room update (@RequestBody Room room) {
+    @ResponseStatus(HttpStatus.CREATED)
+    public Room update(@RequestBody Room room) {
         return roomService.update(room);
     }
 
+    @DeleteMapping("/{id{")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") int id) {
+        return roomService.delete(id);
+    }
 }

@@ -23,29 +23,35 @@ public class MessageController {
         return messageService.getAll();
     }
 
-// para traerlos por id
+    // para traerlos por id
     @GetMapping("/{id}")
-    public Optional<Message> getMessage(@PathVariable("id") int id){
+    public Optional<Message> getMessage(@PathVariable("id") int id) {
         return messageService.getMessage(id);
     }
 
     //el post la ruta es /api/Message/save
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Message save (@RequestBody Message message) {
+    public Message save(@RequestBody Message message) {
         return messageService.save(message);
     }
 
     @PostMapping("/all")
     @ResponseStatus(HttpStatus.CREATED)
-    public Message save1 (@RequestBody Message message) {
+    public Message save1(@RequestBody Message message) {
         return messageService.save(message);
     }
-    
+
     //el put  la ruta es /api/Message/update
     @PutMapping("/update")
-    public Message update (@RequestBody Message message) {
+    @ResponseStatus(HttpStatus.CREATED)
+    public Message update(@RequestBody Message message) {
         return messageService.update(message);
     }
 
+    @DeleteMapping("/{id{")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") int id) {
+        return messageService.delete(id);
+    }
 }
