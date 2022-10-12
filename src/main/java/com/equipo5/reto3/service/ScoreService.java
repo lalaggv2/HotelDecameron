@@ -51,8 +51,8 @@ public class ScoreService {
         return score;
     }
 
-    public boolean delete(int id) {
-        Boolean response = getScore(id).map(element -> {
+    public boolean delete(int idScore) {
+        Boolean response = getScore(idScore).map(element -> {
             scoreRepository.delete(element);
             return true;
         }).orElse(false);

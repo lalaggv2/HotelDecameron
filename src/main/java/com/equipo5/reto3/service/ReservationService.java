@@ -53,8 +53,8 @@ public class ReservationService {
         return reservation;
     }
 
-    public boolean delete(int id) {
-        Boolean response = getReservation(id).map(element -> {
+    public boolean delete(int idReservation) {
+        Boolean response = getReservation(idReservation).map(element -> {
             reservationRepository.delete(element);
             return true;
         }).orElse(false);

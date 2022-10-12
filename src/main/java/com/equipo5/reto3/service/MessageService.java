@@ -48,8 +48,8 @@ public class MessageService {
         return message;
     }
 
-    public boolean delete(int id) {
-        Boolean response = getMessage(id).map(element -> {
+    public boolean delete(int idMessage) {
+        Boolean response = getMessage(idMessage).map(element -> {
             messageRepository.delete(element);
             return true;
         }).orElse(false);
