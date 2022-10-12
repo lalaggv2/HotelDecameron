@@ -32,6 +32,7 @@ public class ClientController {
 
     //el post la ruta es /api/Client/save
     @PostMapping("/save")
+    @ResponseStatus(HttpStatus.CREATED)
     public Client save (@RequestBody Client client) {
         return clientService.save(client);
     }
