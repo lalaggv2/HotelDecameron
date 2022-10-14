@@ -2,7 +2,6 @@ package com.equipo5.reto3.controllers;
 
 import com.equipo5.reto3.entities.Reservation;
 import com.equipo5.reto3.entities.customDTO.CountClient;
-import com.equipo5.reto3.entities.customDTO.CountRoom;
 import com.equipo5.reto3.entities.customDTO.StatusAmount;
 import com.equipo5.reto3.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;

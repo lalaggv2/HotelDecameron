@@ -2,9 +2,7 @@ package com.equipo5.reto3.repository;
 
 import com.equipo5.reto3.entities.Client;
 import com.equipo5.reto3.entities.Reservation;
-import com.equipo5.reto3.entities.Room;
 import com.equipo5.reto3.entities.customDTO.CountClient;
-import com.equipo5.reto3.entities.customDTO.CountRoom;
 import com.equipo5.reto3.repository.crud.ReservationCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
