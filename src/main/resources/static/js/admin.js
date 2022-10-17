@@ -1,8 +1,8 @@
-const urlVM = "http://132.145.209.209"
+const urlVM = "http://132.145.209.209:8080"
 
 function traerAdmins() {
   $.ajax({
-    url: "http://localhost:8080/api/Admin/all",
+    url: urlVM + "api/Admin/all",
     type: 'GET',
     dataType: "json",
     success: function (respuesta) {
@@ -51,7 +51,7 @@ function guardarAdmin() {
   let dataToSend = JSON.stringify(datos);
 
   $.ajax({
-    url: "http://localhost:8080/api/Admin/save",
+    url: urlVM + "/api/Admin/save",
     type: 'POST',
     dataType: 'json',
     contentType: 'application/json',
@@ -71,7 +71,7 @@ function guardarAdmin() {
 
 function eliminarAdmin(idAdmin) {
   $.ajax({
-  url: "http://localhost:8080/api/Admin/" + idAdmin,
+  url: urlVM + "/api/Admin/" + idAdmin,
     type: 'DELETE',
 
     success: function (respuesta) {

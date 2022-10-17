@@ -1,8 +1,8 @@
-const urlVM = "http://132.145.209.209"
+const urlVM = "http://132.145.209.209:8080"
 
 function traerMessages() {
   $.ajax({
-    url: "http://localhost:8080/api/Message/all",
+    url: urlVM + "/api/Message/all",
     type: 'GET',
     dataType: "json",
     success: function (respuesta) {
@@ -50,7 +50,7 @@ function guardarMessage() {
   let dataToSend = JSON.stringify(datos);
 
   $.ajax({
-    url: "http://localhost:8080/api/Message/save",
+    url: urlVM + "/api/Message/save",
     type: 'POST',
     dataType: 'json',
     contentType: 'application/json',
@@ -70,7 +70,7 @@ function guardarMessage() {
 
 function eliminarMessage(idMessage) {
   $.ajax({
-  url: "http://localhost:8080/api/Message/" + idMessage,
+  url: urlVM + "/api/Message/" + idMessage,
     type: 'DELETE',
 
     success: function (respuesta) {

@@ -1,8 +1,8 @@
-const urlVM = "http://132.145.209.209"
+const urlVM = "http://132.145.209.209:8080"
 
 function traerRooms() {
   $.ajax({
-    url: "http://localhost:8080/api/Room/all",
+    url:  urlVM +"/api/Room/all",
     type: 'GET',
     dataType: "json",
     success: function (respuesta) {
@@ -55,7 +55,7 @@ function guardarRoom() {
   let dataToSend = JSON.stringify(datos);
 
   $.ajax({
-    url: "http://localhost:8080/api/Room/save",
+    url: urlVM + "/api/Room/save",
     type: 'POST',
     dataType: 'json',
     contentType: 'application/json',
@@ -77,7 +77,7 @@ function guardarRoom() {
 
 function eliminarRoom(id) {
   $.ajax({
-  url: "http://localhost:8080/api/Room/" + id,
+  url: urlVM + "/api/Room/" + id,
     type: 'DELETE',
 
     success: function (respuesta) {

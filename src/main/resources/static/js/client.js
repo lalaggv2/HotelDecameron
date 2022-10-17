@@ -1,8 +1,8 @@
-const urlVM = "http://132.145.209.209"
+const urlVM = "http://132.145.209.209:8080"
 
 function traerClients() {
   $.ajax({
-    url: "http://localhost:8080/api/Client/all",
+    url: urlVM + "/api/Client/all",
     type: 'GET',
     dataType: "json",
     success: function (respuesta) {
@@ -54,7 +54,7 @@ function guardarClient() {
   let dataToSend = JSON.stringify(datos);
 
   $.ajax({
-    url: "http://localhost:8080/api/Client/save",
+    url: urlVM + "/api/Client/save",
     type: 'POST',
     dataType: 'json',
     contentType: 'application/json',
@@ -74,7 +74,7 @@ function guardarClient() {
 
 function eliminarClient(idClient) {
   $.ajax({
-    url: "http://localhost:8080/api/Client/" + idClient,
+    url: urlVM + "/api/Client/" + idClient,
     type: 'DELETE',
 
     success: function (respuesta) {
