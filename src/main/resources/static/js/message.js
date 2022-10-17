@@ -1,12 +1,12 @@
 const urlVM = "http://132.145.209.209"
 
-function traerAdmins() {
+function traerMessages() {
   $.ajax({
-    url: "http://localhost:8080/api/Admin/all",
+    url: "http://localhost:8080/api/Message/all",
     type: 'GET',
     dataType: "json",
     success: function (respuesta) {
-      pintarAdmins(respuesta);
+      pintarMessages(respuesta);
     },
     error: function (respuesta, xhr) {
       alert("Error de peticion");
@@ -14,13 +14,14 @@ function traerAdmins() {
   });
 }
 
-function pintarAdmins(datos) {
+function pintarMessages(datos) {
   let html = "";
 
   html += "<thead>";
   html += "<tr>";
   html += "<th>Nombre</th>";
-  html += "<th>Correo</th>";
+  html += "<th>Message</th>";
+  html += "<th>Accion</th>";
   html += "</tr>";
   html += "</thead>";
 
@@ -29,36 +30,36 @@ function pintarAdmins(datos) {
   for (dato of datos) {
     html += "<tr>"
     html += "<td>" + dato.name + "</td>";
-    html += "<td>" + dato.email + "</td>";
+    html += "<td>" + dato.textarea + "</td>";
+    html += "<td><button class='btn btn-outline-primary btn-sm' onclick='eliminarMessage(" + dato.idMessage+")'>Eliminar</button></td>";
     html += "<tr>";
 
   }
 
   html += "</tbody>"
 
-  $("#tblAdmins").html(html);
+  $("#tblMessage").html(html);
 }
 
-function guardarAdmin() {
+function guardarMessage() {
   let datos = {
     name: $("#name").val(),
-    email: $("#email").val(),
-    password: $("#password").val(),
+    message: $("#textarea").val(),
   };
 
   let dataToSend = JSON.stringify(datos);
 
   $.ajax({
-    url: "http://localhost:8080/api/Admin/save",
+    url: "http://localhost:8080/api/Message/save",
     type: 'POST',
     dataType: 'json',
     contentType: 'application/json',
     data: dataToSend,
     success: function (respuesta) {
       name: $("#name").val("");
-      email: $("#email").val("");
-      password: $("#password").val("");
-      traerAdmins();
+      message: $("#textarea").val("");
+     
+      traerMessages();
 
     },
     error: function (respuesta, xhr) {
@@ -67,13 +68,14 @@ function guardarAdmin() {
   });
 }
 
-function eliminarAdmin(idAdmin) {
+function eliminarMessage(idMessage) {
   $.ajax({
-  url: "http://localhost:8080/api/Admin/" + idAdmin,
+  url: "http://localhost:8080/api/Message/" + idMessage,
     type: 'DELETE',
 
     success: function (respuesta) {
-      traerAdmins();
+      confirm("El registro sera eliminado. Presione OK para eliminar")
+      traerMessages();
 
     },
     error: function (respuesta, xhr) {
@@ -82,3 +84,4 @@ function eliminarAdmin(idAdmin) {
   });
 
 }
+

@@ -20,7 +20,10 @@ function pintarRooms(datos) {
   html += "<thead>";
   html += "<tr>";
   html += "<th>Nombre</th>";
-  html += "<th>Correo</th>";
+  html += "<th>Hotel</th>";
+  html += "<th>Estrellas</th>";
+  html += "<th>Descripcion</th>";
+  html += "<th>Accion</th>";
   html += "</tr>";
   html += "</thead>";
 
@@ -29,14 +32,17 @@ function pintarRooms(datos) {
   for (dato of datos) {
     html += "<tr>"
     html += "<td>" + dato.name + "</td>";
-    html += "<td>" + dato.email + "</td>";
+    html += "<td>" + dato.hotel + "</td>";
+    html += "<td>" + dato.stars + "</td>";
+    html += "<td>" + dato.description + "</td>";
+    html += "<td><button class='btn btn-outline-primary btn-sm' onclick='eliminarRoom(" + dato.idAdmin+")'>Eliminar</button></td>";
     html += "<tr>";
 
   }
 
   html += "</tbody>"
 
-  $("#tblClients").html(html);
+  $("#tblRooms").html(html);
 }
 
 function guardarRoom() {
@@ -56,9 +62,11 @@ function guardarRoom() {
     data: dataToSend,
     success: function (respuesta) {
       name: $("#name").val("");
-      email: $("#email").val("");
-      password: $("#password").val("");
-      traerClients();
+      email: $("#hotel").val("");
+      stars: $("#stars").val("");
+      description: $("#description  ").val("");
+
+      traerRooms();
 
     },
     error: function (respuesta, xhr) {
@@ -67,13 +75,14 @@ function guardarRoom() {
   });
 }
 
-function eliminarAdmin(idAdmin) {
+function eliminarRoom(id) {
   $.ajax({
-  url: "http://localhost:8080/api/Admin/" + idAdmin,
+  url: "http://localhost:8080/api/Room/" + id,
     type: 'DELETE',
 
     success: function (respuesta) {
-      traerAdmins();
+      confirm("El registro sera eliminado. Presione OK para eliminar")
+      traerRooms();
 
     },
     error: function (respuesta, xhr) {

@@ -75,6 +75,7 @@ function eliminarAdmin(idAdmin) {
     type: 'DELETE',
 
     success: function (respuesta) {
+      confirm("El registro sera eliminado. Presione OK para eliminar")
       traerAdmins();
 
     },

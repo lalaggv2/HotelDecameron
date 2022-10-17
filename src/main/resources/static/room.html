@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- estos enlaces de webjars solo funcionan si estamos autenticados-->
+  <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+  <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="text/javascript" src="js/room.js"></script>
+  <title>Hoteles</title>
+</head>
+
+<body onload="traerRooms()">
+  <div id="pagina">
+  <div class="bg-image"
+    style="background-image: url('https://virtualbackgrounds.site/wp-content/uploads/2020/08/hotel-view-over-central-park-1024x576.jpg'); height: 100vh">
+    <div id="content">
+      <div id="tables" class="container">
+        <div class="fs-2">
+          <h1 class="display-4 fw-bold">Habitaciones</h1>
+
+          <div style="padding-top: 2%;" class="fs-4">
+            <table id="tblRooms" class="table table-success table-striped">
+
+            </table><br>
+
+            <h3 class="fs-4 fw-bold">Registrar nueva habitacion</h3>
+            <form action="">
+              <div class="mb-3">
+
+                <input type="name" class="form-control-sm" id="name" placeholder="Ingrese su nombre"><br>
+                <input type="text" class="form-control-sm" id="hotel" placeholder="Ingrese su hotel"><br>
+                <input type="number" class="form-control-sm" id="stars" placeholder="Ingrese las estrellas"><br>
+                <textarea placeholder="Ingrese la descripcion" id="description"></textarea>
+                <br><br>
+
+                <button type="button" class="btn btn-light btn-sm" onclick="guardarRoom()">Guardar</button>
+                <button type="button" class="btn btn-light btn-sm" onclick="eliminarRoom()">Eliminar</button><br><br>
+                <button type="button" id="btnAtras" onclick="document.location.href='homepage.html'">Volver
+                  Atras</button>
+
+
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+    <footer>Mision Tic 2022 ** Reto 5 ** Ciclo 3 **<br> &copy Luz Angela Gutierrez Gutierrez <a href="mailto:luangu2020@gmail.com">luangu2020@gmail.com</a></p>
+    </footer>
+  </div>
+  </body>
+
+  </html>

@@ -1,14 +1,94 @@
+.bg-image {
+  background-image: url('https://virtualbackgrounds.site/wp-content/uploads/2020/08/hotel-view-over-central-park-1024x576.jpg');
+  min-height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
   color: #3d0808;
 }
 
-h1 {
+#content {  
+  min-height: 100%;
+}
+
+#pagina {
+  position: relative;
+  min-height: 100%;
+}
+
+#pagcnt {    
+  position: relative;
+  top: 400px;
+  left: 30px;
+}
+
+#pagcnt1 {    
+  position: relative;
+  top: 200px;
+  left: 30px;
+  text-align: center;
+}
+
+.container {
+  justify-content: left;
+  padding-bottom: 100px;
+}
+
+h1,
+h3 {
   background-color: hsl(89, 35%, 79%);
   display: inline;
 }
 
 table {
   font-size: medium;
-  width: 50%;
   align-self: left;
+}
+
+#tables {
+  width: 40%;
+  text-align: left;
+  margin-left: 30px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+button {
+  padding: 15px;
+}
+
+#btnAtras {
+  --bs-btn-padding-y: .25rem;
+  --bs-btn-padding-x: .25rem;
+  --bs-btn-font-size: .5rem;
+
+}
+
+#textarea {
+  font-size: large;
+}
+
+footer {
+  height: 100px;
+  line-height: 50px;
+  background: #3d0808;
+  color:bisque;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
 }

@@ -22,6 +22,7 @@ function pintarClients(datos) {
   html += "<th>Nombre</th>";
   html += "<th>Correo</th>";
   html += "<th>Edad</th>";
+  html += "<th>Accion</th>";
   html += "</tr>";
   html += "</thead>";
 
@@ -31,7 +32,8 @@ function pintarClients(datos) {
     html += "<tr>"
     html += "<td>" + dato.name + "</td>";
     html += "<td>" + dato.email + "</td>";
-    html += "<td>" + dato.email + "</td>";
+    html += "<td>" + dato.age + "</td>";
+    html += "<td><button class='btn btn-outline-primary btn-sm' onclick='eliminarClient(" + dato.idClient+")'>Eliminar</button></td>";
     html += "<tr>";
 
   }
@@ -41,11 +43,12 @@ function pintarClients(datos) {
   $("#tblClients").html(html);
 }
 
-function Client() {
+function guardarClient() {
   let datos = {
     name: $("#name").val(),
     email: $("#email").val(),
     password: $("#password").val(),
+    age: $("#age").val(),
   };
 
   let dataToSend = JSON.stringify(datos);
@@ -62,7 +65,6 @@ function Client() {
       password: $("#password").val("");
       age: $("#age").val("");
       traerClients();
-
     },
     error: function (respuesta, xhr) {
       alert("Error de peticion")
@@ -70,13 +72,14 @@ function Client() {
   });
 }
 
-function eliminarAdmin(idAdmin) {
+function eliminarClient(idClient) {
   $.ajax({
-  url: "http://localhost:8080/api/Admin/" + idAdmin,
+    url: "http://localhost:8080/api/Client/" + idClient,
     type: 'DELETE',
 
     success: function (respuesta) {
-      traerAdmins();
+      confirm("El registro sera eliminado. Presione OK para eliminar")
+      traerClients();
 
     },
     error: function (respuesta, xhr) {
