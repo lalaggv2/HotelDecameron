@@ -2,7 +2,6 @@ package com.equipo5.reto3.service;
 
 import com.equipo5.reto3.entities.Admin;
 import com.equipo5.reto3.repository.AdminRepository;
-import com.equipo5.reto3.repository.crud.AdminCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

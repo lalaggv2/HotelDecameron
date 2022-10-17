@@ -1,29 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- estos enlaces de webjars solo funcionan si estamos autenticados-->
-    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
-    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-    <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <!-- estos enlaces de webjars solo funcionan si estamos autenticados-->
+  <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+  <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
+  <script type="text/javascript" src="js/admin.js"></script>
   <title>Hoteles</title>
 </head>
-<body>
-<div class="bg-image" style="background-image: url('https://virtualbackgrounds.site/wp-content/uploads/2020/08/hotel-view-over-central-park-1024x576.jpg'); height: 100vh">
 
-  <div  style="width: 90%; text-align:left; margin-left: 30px; padding-top: 2%; padding-bottom: 2%;">
-    <div class="fs-2">
-    <h1 class="display-4 fw-bold">Administradores</h1>
+<body onload="traerAdmins()">
+  <div class="bg-image"
+    style="background-image: url('https://virtualbackgrounds.site/wp-content/uploads/2020/08/hotel-view-over-central-park-1024x576.jpg')">
 
-    <div style="padding-top: 2%;">
-<table id="tblAdmins">
+    <div style="width: 40%; text-align:left; margin-left: 30px; padding-top: 2%; padding-bottom: 2%;">
+      <div class="fs-2">
+        <h1 class="display-4 fw-bold">Administradores</h1>
 
-</table>
+        <div style="padding-top: 2%;" class="fs-4">
+          <table id="tblAdmins" class="table table-success table-striped">
+            <!-- <tr>
+    <th>Nombre</th>
+    <th>Email</th>
+  </tr> -->
 
+          </table><br>
+
+          <h3 class="fs-4 fw-bold">Registrar Administrador</h3>
+          <form action="">
+            <div class="mb-3">
+
+              <input type="name" class="form-control-sm" id="name" placeholder="Ingrese su nombre"><br>
+              <input type="email" class="form-control-sm" id="email" placeholder="Ingrese su correo"><br>
+              <input type="password" class="form-control-sm" id="password" placeholder="Ingrese su clave"><br><br>
+             
+              <button type="button" class="btn btn-light btn-sm" onclick="guardarAdmin()" style="padding: 15px;">Guardar</button>
+              <button type="button" class="btn btn-light btn-sm" onclick="eliminarAdmin()" style="padding: 15px;">Eliminar</button><br>
+              <button type="button"id="btnAtras" class="d-grid col-3 mx-auto" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="document.location.href='homepage.html'" >
+ Volver Atras
+</button>
+
+           
+            </div>
+
+          </form>
+
+        </div>
       </div>
+
     </div>
+
+</body>

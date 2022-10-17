@@ -38,7 +38,7 @@ public class RoomService {
     public Room update(Room room) {
         if(room.getId() != null) {
             Optional<Room> roomFound = getRoom(room.getId());
-            if (!roomFound.isEmpty()) {
+            if (roomFound.isPresent()) {
                 if (room.getName() != null){
                     roomFound.get().setName(room.getName());
                 }

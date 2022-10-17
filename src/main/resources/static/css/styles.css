@@ -6,3 +6,9 @@ h1 {
   background-color: hsl(89, 35%, 79%);
   display: inline;
 }
+
+table {
+  font-size: medium;
+  width: 50%;
+  align-self: left;
+}

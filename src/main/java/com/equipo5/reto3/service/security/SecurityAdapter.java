@@ -16,7 +16,7 @@ public class SecurityAdapter extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
         ).exceptionHandling(e -> e
                 .authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED))
-        ).oauth2Login();
+        ).oauth2Login(); //.defaultSuccessUrl("http://localhost:8080/homepage.htm", true); esto funciona para redireccionar
 
         http.cors().and().csrf().disable();
 
